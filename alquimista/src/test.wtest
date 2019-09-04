@@ -7,3 +7,8 @@ test "El alquimista no tiene criterio si se agrega un item no efectivo" {
 	alquimista.agregarItemDeCombate(pocion)
 	assert.notThat(alquimista.tieneCriterio())
 }
+
+test "El alquimista no es buen explorador" {
+	assert.notThat(alquimista.esBuenExplorador())
+}
+

@@ -6,6 +6,10 @@ object alquimista {
 		return itemsDeCombate.filter({item=>item.esEfectivo()}).size() >= (itemsDeCombate.size() / 2)
 	}
  	
+ 	method esBuenExplorador() {
+ 		return itemsDeRecoleccion.asSet().size() > 3
+ 	}
+ 	
 	method agregarItemDeCombate(unItem) {
 		itemsDeCombate.add(unItem)
 	}
@@ -36,6 +40,14 @@ object alquimista {
 	
 	method todosLosItemsDeCombateSonEfectivos() {
 		return itemsDeCombate.all({unItem => unItem.esEfectivo()})
+	}
+	
+	method itemsDeCombate() {
+		return itemsDeCombate
+	}
+	
+	method itemsDeRecoleccion(){
+		return itemsDeRecoleccion
 	}
 }
 
