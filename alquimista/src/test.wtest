@@ -12,3 +12,22 @@ test "El alquimista no es buen explorador" {
 	assert.notThat(alquimista.esBuenExplorador())
 }
 
+test "La capacidad de la bomba es 100 porque su daño es 200" {
+	assert.that(bomba.capacidad()==100)
+}
+
+test "La bomba es efectiva porque su daño es mayor a 100" {
+	assert.that(bomba.esEfectivo())
+}
+
+test "La pocion no es efectiva porque su poder curativo es menor a 50" {
+	assert.notThat(pocion.esEfectivo())
+}
+
+test "La capacidad es 20 ya que éste es su poder curativo y no tiene materiales místicos" {
+	assert.that(pocion.capacidad() == 20)
+}
+
+test "La pocion no tiene materiales místicos" {
+	 assert.that(pocion.cantidadDeMaterialesMisticos() == 0)
+}
