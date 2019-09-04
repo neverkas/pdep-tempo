@@ -1,6 +1,9 @@
+import example.*
+test "El alquimista tiene criterio" {
+	assert.that(alquimista.tieneCriterio())
+}
 
-test "testX" {
-
-	assert.that(true)
-
+test "El alquimista no tiene criterio si se agrega un item no efectivo" {
+	alquimista.agregarItemDeCombate(pocion)
+	assert.notThat(alquimista.tieneCriterio())
 }

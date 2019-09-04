@@ -1,33 +1,17 @@
 object alquimista {
-	var itemsDeCombate = [] 
+	var itemsDeCombate = [bomba,pocion] 
 	var itemsDeRecoleccion = []
 	
+	method tieneCriterio() {
+		return itemsDeCombate.filter({item=>item.esEfectivo()}).size() >= (itemsDeCombate.size() / 2)
+	}
+ 	
 	method agregarItemDeCombate(unItem) {
 		itemsDeCombate.add(unItem)
 	}
 	
 	method agregarItemDeRecoleccion(unItem) {
 		itemsDeRecoleccion.add(unItem)
-	}
-	
-	method tieneCriterio() {
-		return self.cantidadDeItemsDeCombateEfectivos() >= itemsDeCombate.size() / 2
-	}
-	
-	method cantidadDeItemsDeCombateEfectivos() {
-		return itemsDeCombate.count({unItem => unItem.esEfectivo()})
-	}
-	
-	method esBuenExplorador() {
-		return itemsDeRecoleccion.count({unItem => unItem.esDeDiferenteTipo()}) >= 3
-	}
-	
-	method capacidadOfensiva() {
-		return itemsDeCombate.sum({unItem => unItem.capacidad()})
-	}
-	
-	method esProfesional() {
-		return self.calidadPromedioDeItemsMayorA50() && self.todosLosItemsDeCombateSonEfectivos() && self.esBuenExplorador()
 	}
 	
 	method calidadPromedioDeItemsMayorA50() {
@@ -56,7 +40,7 @@ object alquimista {
 }
 
 object bomba {
-	var danio
+	var danio = 200
 	var materiales = []
 	
 	method agregarMaterial(unMaterial) {
@@ -81,7 +65,7 @@ object bomba {
 }
 
 object pocion {
-	var poderCurativo
+	var poderCurativo = 20
 	var materiales = []
 	
 	method agregarMaterial(unMaterial) {
