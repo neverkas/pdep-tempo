@@ -31,3 +31,15 @@ test "La capacidad es 20 ya que éste es su poder curativo y no tiene materiales
 test "La pocion no tiene materiales místicos" {
 	 assert.that(pocion.cantidadDeMaterialesMisticos() == 0)
 }
+
+test "El debilitador no tiene materiales misticos" {
+	assert.that(debilitador.noTieneNingunMaterialMistico())
+}
+
+test "El debilitador es efectivo porque su potenia es mayor a 0 y no tiene materiales misticos" {
+	assert.that(debilitador.esEfectivo())
+}
+
+test "El debilitador no tiene materiales" {
+	assert.that(debilitador.cantidadDeMateriales() == 0)
+}

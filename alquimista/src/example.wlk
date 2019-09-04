@@ -118,7 +118,7 @@ object pocion {
 }
 
 object debilitador {
-	var potencia
+	var potencia = 10
 	var materiales = []
 	
 	method agregarMaterial(unMaterial) {
